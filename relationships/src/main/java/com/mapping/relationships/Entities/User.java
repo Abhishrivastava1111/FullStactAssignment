@@ -20,7 +20,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
-    private String userName;
 
     @Enumerated(EnumType.STRING)
     private UserType userType;

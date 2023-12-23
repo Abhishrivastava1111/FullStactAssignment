@@ -2,6 +2,8 @@ package com.mapping.relationships.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CompounderDao extends JpaRepository{
+import com.mapping.relationships.Entities.Compounder;
+
+public interface CompounderDao extends JpaRepository<Compounder, Long>{
     
 }
