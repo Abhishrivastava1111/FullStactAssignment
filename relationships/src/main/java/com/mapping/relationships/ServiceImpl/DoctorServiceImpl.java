@@ -1,5 +1,9 @@
 package com.mapping.relationships.ServiceImpl;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -20,6 +24,8 @@ public class DoctorServiceImpl implements DoctorService{
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private ModelMapper  modelMapper;
 
     @Override
     public ResponseEntity<String> addDoctor(DoctorDto dto) {
@@ -37,4 +43,27 @@ public class DoctorServiceImpl implements DoctorService{
      }
      return ResponseEntity.ok("failure");
 }
+
+
+   @Override
+   public ResponseEntity<List<DoctorDto>> getDoctors() {
+
+      //created a list to return in response
+      List<DoctorDto> list  = new ArrayList<>();
+
+
+      //Fetched all the users who have doctor as their type
+      List<User> users = userService.getUsers();
+      for(User u :users){
+         Doctor d = doctorDao.findByDoctorId(u.getUserId()).get(0);
+         DoctorDto dto = new DoctorDto();
+         dto = modelMapper.map(u, DoctorDto.class);
+         dto.setSpecialization(d.getSpecialization());
+         list.add(dto);
+      }
+      
+      return ResponseEntity.ok(list);
+
+      
+   }
 }
