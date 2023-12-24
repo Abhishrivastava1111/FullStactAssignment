@@ -8,8 +8,6 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 public class PatentDto {
-   
-    private String userType;
 
     private String name;
 

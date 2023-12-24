@@ -2,12 +2,12 @@ package com.mapping.relationships.ServiceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
 import com.mapping.relationships.Entities.Doctor;
 import com.mapping.relationships.Entities.User;
 import com.mapping.relationships.dao.DoctorDao;
@@ -65,5 +65,38 @@ public class DoctorServiceImpl implements DoctorService{
       return ResponseEntity.ok(list);
 
       
+   }
+
+
+   @Override
+   public ResponseEntity<String> updateDoctor(DoctorDto dto, Long id) {
+
+      Optional<User> user = userService.findByDoctorId(id);
+      Optional<Doctor> doc = doctorDao.findById(id);
+      boolean flag =false;
+      if(user.isPresent()&& doc.isPresent()){
+        
+          User u =  user.get();
+          Doctor d = doc.get();
+         u.setName(dto.getName());
+         u.setEmail(dto.getEmail());
+         d.setSpecialization(dto.getSpecialization());
+         doctorDao.save(d);
+         userService.save(u);
+         flag = true;
+      }
+      return flag?ResponseEntity.ok("The data is updated successfully"):ResponseEntity.ok("something went wrong");
+
+   }
+
+
+   @Override
+   public ResponseEntity<String> deleteDoctorsRecord(Long id) {
+      doctorDao.deleteById(id);
+      userService.deleteById(id);
+      
+
+      
+      return ResponseEntity.ok("deleted successfully");
    }
 }

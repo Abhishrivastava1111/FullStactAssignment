@@ -10,4 +10,8 @@ public interface DoctorService {
     public ResponseEntity<String> addDoctor(DoctorDto dto);
 
     public ResponseEntity<List<DoctorDto>> getDoctors();
+
+    public ResponseEntity<String> updateDoctor(DoctorDto dto, Long id);
+
+    public ResponseEntity<String> deleteDoctorsRecord(Long id);
 }
