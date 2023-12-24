@@ -28,9 +28,6 @@ public class DoctorServiceImpl implements DoctorService{
     private UserService userService;
 
     @Autowired
-    private UserRoleDao userRolesDao;
-
-    @Autowired
     private ModelMapper  modelMapper;
 
     @Override
@@ -47,7 +44,7 @@ public class DoctorServiceImpl implements DoctorService{
 
 
    @Override
-   public ResponseEntity<String> getDoctors() {
+   public ResponseEntity<List<DoctorDto>> getDoctors() {
 
       //created a list to return in response
       List<DoctorDto> list  = new ArrayList<>();
@@ -55,18 +52,20 @@ public class DoctorServiceImpl implements DoctorService{
 
       //Fetched all the users who have doctor as their type
       List<User> users = userService.getUsers("DOCTOR");
-      System.err.println("sdfsdfsdfsd");
       for(User u :users){
 
-         Doctor d = doctorDao.findByDoctorId(u.getUserId()).get(0);
+         List<Doctor> d = doctorDao.findByDoctorId(u.getUserId());
+         if(!d.isEmpty()){
          DoctorDto dto = new DoctorDto();
          dto = modelMapper.map(u, DoctorDto.class);
-         dto.setSpecialization(d.getSpecialization());
+         dto.setSpecialization(d.get(0).getSpecialization());
          list.add(dto);
+         }
+         
       }
       if(list.isEmpty())
-      return ResponseEntity.ok("Something went wrong");
-      return ResponseEntity.ok("list");
+      return null;
+      return ResponseEntity.ok(list);
 
       
    }

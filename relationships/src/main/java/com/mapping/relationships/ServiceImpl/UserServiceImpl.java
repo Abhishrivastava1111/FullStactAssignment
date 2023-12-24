@@ -1,5 +1,7 @@
 package com.mapping.relationships.ServiceImpl;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -34,6 +36,10 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private DoctorDao doctorDao;
 
+
+
+
+    
     @Transactional
     @Override
     public User addUser(DoctorDto dtoObj, String type) {
@@ -114,15 +120,18 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public List<User> getUsers(String ...type) {
-      System.out.println(type);
-      Set<Roles> set  = new HashSet<>();
-      
-      for (String t : type) {
-        Optional<Roles> r = rolesDao.findByRoleName(t);
-        if(r.isPresent())
-        
-        set.add(r.get());
+       List<User>  allDoctors = new ArrayList<>();
+      for(String t : type){
+
+      Roles doctorRoles = rolesDao.findByRoleName(t).get();
+      List<User> u = userDao.findByRolesIn(Collections.singleton(doctorRoles) );
+        if(u.size()!=0){
+          allDoctors.addAll(u);
+        }
       }
-          return  userDao.findByRolesIn(set);
+
+
+
+      return  allDoctors;
     }
 }
