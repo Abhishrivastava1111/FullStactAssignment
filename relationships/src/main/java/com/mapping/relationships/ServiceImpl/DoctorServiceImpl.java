@@ -10,7 +10,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import com.mapping.relationships.Entities.Doctor;
 import com.mapping.relationships.Entities.User;
+import com.mapping.relationships.Entities.UserRole;
 import com.mapping.relationships.dao.DoctorDao;
+import com.mapping.relationships.dao.RolesDao;
+import com.mapping.relationships.dao.UserRoleDao;
 import com.mapping.relationships.dto.DoctorDto;
 import com.mapping.relationships.service.DoctorService;
 import com.mapping.relationships.service.UserService;
@@ -25,44 +28,45 @@ public class DoctorServiceImpl implements DoctorService{
     private UserService userService;
 
     @Autowired
+    private UserRoleDao userRolesDao;
+
+    @Autowired
     private ModelMapper  modelMapper;
 
     @Override
     public ResponseEntity<String> addDoctor(DoctorDto dto) {
-       
-         User user = userService.addUser(dto);
 
-         Doctor doc = new Doctor();
-      doc.setSpecialization(dto.getSpecialization());
-      doc.setUser(user);
+      // getting the persised user object
+      User savedUser = userService.addUser(dto, "DOCTOR");
 
-     Doctor d =  doctorDao.save(doc);
-
-     if(d!= null){
-        return ResponseEntity.ok("Success");
-     }
-     return ResponseEntity.ok("failure");
+      if(savedUser!= null){
+      return ResponseEntity.ok("Success");
+      }
+      return ResponseEntity.ok("failure");
 }
 
 
    @Override
-   public ResponseEntity<List<DoctorDto>> getDoctors() {
+   public ResponseEntity<String> getDoctors() {
 
       //created a list to return in response
       List<DoctorDto> list  = new ArrayList<>();
 
 
       //Fetched all the users who have doctor as their type
-      List<User> users = userService.getUsers();
+      List<User> users = userService.getUsers("DOCTOR");
+      System.err.println("sdfsdfsdfsd");
       for(User u :users){
+
          Doctor d = doctorDao.findByDoctorId(u.getUserId()).get(0);
          DoctorDto dto = new DoctorDto();
          dto = modelMapper.map(u, DoctorDto.class);
          dto.setSpecialization(d.getSpecialization());
          list.add(dto);
       }
-      
-      return ResponseEntity.ok(list);
+      if(list.isEmpty())
+      return ResponseEntity.ok("Something went wrong");
+      return ResponseEntity.ok("list");
 
       
    }

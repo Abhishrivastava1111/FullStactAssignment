@@ -1,7 +1,8 @@
 package com.mapping.relationships.dto;
 
 
-import com.mapping.relationships.Entities.UserType;
+import java.util.Set;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,7 +18,7 @@ import lombok.ToString;
 @AllArgsConstructor
 public class LoginCredentialsDto {
 
-    private UserType role;
+    private Set<String> role;
 
     private String email;
     private String authToken;

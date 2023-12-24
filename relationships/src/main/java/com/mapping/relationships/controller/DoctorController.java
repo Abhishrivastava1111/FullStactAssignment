@@ -31,7 +31,7 @@ public class DoctorController {
     }
 
     @GetMapping("/allDoctors")
-    public ResponseEntity<List<DoctorDto>> getDoctors(){
+    public ResponseEntity<String> getDoctors(){
 
         return doctorService.getDoctors();
     }

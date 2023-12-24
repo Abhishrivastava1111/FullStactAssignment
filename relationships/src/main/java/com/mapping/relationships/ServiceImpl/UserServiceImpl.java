@@ -1,14 +1,20 @@
 package com.mapping.relationships.ServiceImpl;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.mapping.relationships.Entities.Doctor;
+import com.mapping.relationships.Entities.Roles;
 import com.mapping.relationships.Entities.User;
-import com.mapping.relationships.Entities.UserType;
+import com.mapping.relationships.Entities.UserRole;
+import com.mapping.relationships.dao.DoctorDao;
+import com.mapping.relationships.dao.RolesDao;
 import com.mapping.relationships.dao.UserDao;
 import com.mapping.relationships.dto.DoctorDto;
 import com.mapping.relationships.dto.LoginCredentialsDto;
@@ -21,25 +27,56 @@ public class UserServiceImpl implements UserService{
 
     @Autowired
     private UserDao userDao;
-    
+
+    @Autowired
+    private RolesDao rolesDao;
+
+    @Autowired
+    private DoctorDao doctorDao;
+
+    @Transactional
     @Override
-    public User addUser(DoctorDto dtoObj) {
+    public User addUser(DoctorDto dtoObj, String type) {
       User newUser = new User();
 
       newUser.setName(dtoObj.getName()); 
-      newUser.setUserType(UserType.DOCTOR); 
       newUser.setEmail(dtoObj.getEmail()); 
       newUser.setPassword(dtoObj.getPassword()); 
 
-      return userDao.save(newUser);
+      Roles givenRole = rolesDao.findByRoleName(type)
+            .orElseGet(() -> {
+                Roles newRole = new Roles(type);
+                return newRole; 
+            });
+
+      newUser.getRoles().add(givenRole);
+
+      //saving the user with the given credential
+      User savedUser =  userDao.save(newUser);
+
+        // Creating the doc obj to persist in the database as the user
+         Doctor doc = new Doctor();
+         
+         doc.setSpecialization(dtoObj.getSpecialization());
+
+         //setting up the field of doctor as user
+         doc.setUser(savedUser);
+
+   //actually persisting the data in the doctor's table
+      doctorDao.save(doc);
+
+      //persisting the userRole for the perticular type of user
+      UserRole userRole = new UserRole();
+      userRole.setUser(savedUser);
+
+      userRole.setRole(givenRole);
+
+      return savedUser;
     
 
 }
 
-    @Override
-    public List<User> getUsers() {
-      return userDao.findByUserType(UserType.DOCTOR);
-    }
+   
 
     @Override
     public Optional<User> findByDoctorId(Long id) {
@@ -60,12 +97,32 @@ public class UserServiceImpl implements UserService{
     public LoginCredentialsDto login(String email, String passwordString) {
      List<User> u = userDao.findByEmailAndPassword(email, passwordString);
       LoginCredentialsDto userDataToBeSent = new LoginCredentialsDto();
+      
+      
       if(u.size()!=0){
       userDataToBeSent.setEmail(u.get(0).getEmail());
-      userDataToBeSent.setRole(u.get(0).getUserType());
+
+      u.get(0).getRoles().forEach(role-> userDataToBeSent.getRole().add(role.getRoleName()));
       userDataToBeSent.setAuthToken(passwordString);
       }
         return userDataToBeSent;
       
+    }
+
+
+
+
+    @Override
+    public List<User> getUsers(String ...type) {
+      System.out.println(type);
+      Set<Roles> set  = new HashSet<>();
+      
+      for (String t : type) {
+        Optional<Roles> r = rolesDao.findByRoleName(t);
+        if(r.isPresent())
+        
+        set.add(r.get());
+      }
+          return  userDao.findByRolesIn(set);
     }
 }
