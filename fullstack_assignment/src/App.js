@@ -1,18 +1,13 @@
 import React from "react";
-import "./App.css";
-import Layout from "./components/Layout";
-import { useSelector } from "react-redux";
-import LoginForm from "./Auth";
+import Header from "./components/Header";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Home from "./components/Home";
 
 function App() {
-  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
-  const items = useSelector((state) => state.cart.itemList);
-  console.log(items);
-  console.log(isLoggedIn);
   return (
     <div className="App">
-      {isLoggedIn ? <Layout /> : <LoginForm />}
-      {/* <Layout /> */}
+      <Header></Header>
+      <ProtectedRoute element={<Home />} />
     </div>
   );
 }

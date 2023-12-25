@@ -4860,3 +4860,321 @@ Caused by: java.lang.ClassNotFoundException: LoginRequestDto
 2023-12-25T12:59:04.155+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
 2023-12-25T12:59:04.156+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 48, 46, 49, 34, 44, 34, 105, 110, 10 (truncated)...]
 2023-12-25T12:59:04.157+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T13:01:22.772+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T13:01:22.773+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T13:01:22.789+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T13:01:22.967+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2023-12-25T13:01:22.967+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T13:01:22.969+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T13:01:37.357+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T13:01:37.357+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T13:01:37.359+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T13:01:37.366+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T13:01:37.366+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T13:01:37.367+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T13:15:25.715+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/v1/users/login", parameters={}
+2023-12-25T13:15:25.716+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T13:15:25.717+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T13:15:25.723+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T13:15:25.724+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T13:15:25.725+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T13:15:25.737+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T13:15:25.737+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T13:15:25.739+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T13:16:45.551+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T13:16:45.552+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T13:16:45.553+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T13:16:45.562+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T13:16:45.562+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T13:16:45.568+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T13:17:38.245+05:30 DEBUG 40716 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T13:17:38.245+05:30 DEBUG 40716 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T13:17:38.247+05:30 DEBUG 40716 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T13:17:38.254+05:30 DEBUG 40716 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T13:17:38.255+05:30 DEBUG 40716 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T13:17:38.255+05:30 DEBUG 40716 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T13:18:15.929+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T13:18:15.930+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T13:18:15.931+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T13:18:15.940+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T13:18:15.941+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T13:18:15.944+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T13:19:00.599+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T13:19:00.600+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T13:19:00.601+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T13:19:00.608+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T13:19:00.608+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T13:19:00.608+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T13:19:35.272+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T13:19:35.272+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T13:19:35.273+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T13:19:35.278+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T13:19:35.279+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T13:19:35.280+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T13:20:22.571+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T13:20:22.571+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T13:20:22.573+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T13:20:22.582+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T13:20:22.582+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T13:20:22.584+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T13:21:05.761+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T13:21:05.762+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T13:21:05.763+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T13:21:05.770+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T13:21:05.770+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T13:21:05.771+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T13:23:37.989+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T13:23:37.990+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T13:23:37.991+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T13:23:37.999+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T13:23:37.999+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T13:23:38.000+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T13:24:13.640+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T13:24:13.640+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T13:24:13.641+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T13:24:13.651+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T13:24:13.651+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T13:24:13.652+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T13:24:40.449+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T13:24:40.450+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T13:24:40.450+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T13:24:40.466+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T13:24:40.466+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T13:24:40.468+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T13:25:42.745+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T13:25:42.746+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T13:25:42.747+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T13:25:42.752+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T13:25:42.752+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T13:25:42.753+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T14:01:04.890+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/v1/users/login", parameters={}
+2023-12-25T14:01:04.891+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T14:01:04.891+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T14:01:04.895+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T14:01:04.895+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T14:01:04.896+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T14:01:04.906+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T14:01:04.906+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T14:01:04.907+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T14:07:06.781+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T14:07:06.781+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T14:07:06.783+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T14:07:06.793+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T14:07:06.793+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T14:07:06.795+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T14:09:22.709+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T14:09:22.709+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T14:09:22.710+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T14:09:22.718+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T14:09:22.718+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T14:09:22.719+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T14:11:17.530+05:30 DEBUG 40716 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T14:11:17.530+05:30 DEBUG 40716 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T14:11:17.531+05:30 DEBUG 40716 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T14:11:17.537+05:30 DEBUG 40716 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T14:11:17.538+05:30 DEBUG 40716 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T14:11:17.538+05:30 DEBUG 40716 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T14:14:14.030+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T14:14:14.030+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T14:14:14.031+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T14:14:14.037+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T14:14:14.037+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T14:14:14.038+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T14:14:38.539+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T14:14:38.539+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T14:14:38.540+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T14:14:38.548+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T14:14:38.548+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T14:14:38.549+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:09:26.463+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/v1/users/login", parameters={}
+2023-12-25T16:09:26.463+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:09:26.464+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:09:26.466+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T16:09:26.466+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:09:26.467+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T16:09:26.474+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T16:09:26.474+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T16:09:26.474+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:25:00.733+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T16:25:00.734+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:25:00.735+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T16:25:00.745+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T16:25:00.746+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T16:25:00.747+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:25:28.784+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T16:25:28.784+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:25:28.786+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T16:25:28.793+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T16:25:28.793+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T16:25:28.794+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:27:05.569+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T16:27:05.570+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:27:05.571+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T16:27:05.578+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T16:27:05.579+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T16:27:05.580+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:29:09.255+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T16:29:09.255+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:29:09.256+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T16:29:09.262+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T16:29:09.262+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T16:29:09.263+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:31:11.299+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T16:31:11.299+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:31:11.300+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T16:31:11.306+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T16:31:11.306+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T16:31:11.308+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:31:40.122+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T16:31:40.122+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:31:40.123+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T16:31:40.133+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T16:31:40.134+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T16:31:40.135+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:32:31.080+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T16:32:31.081+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:32:31.082+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T16:32:31.090+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T16:32:31.091+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T16:32:31.092+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:33:17.166+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T16:33:17.166+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:33:17.167+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T16:33:17.171+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T16:33:17.172+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T16:33:17.172+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:33:43.229+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T16:33:43.230+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:33:43.230+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T16:33:43.235+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T16:33:43.235+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T16:33:43.236+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:35:01.118+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T16:35:01.118+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:35:01.119+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T16:35:01.126+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T16:35:01.127+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T16:35:01.127+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:37:22.522+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T16:37:22.523+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:37:22.535+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T16:37:22.556+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T16:37:22.557+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T16:37:22.558+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:38:00.500+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T16:38:00.501+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:38:00.501+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T16:38:00.505+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T16:38:00.505+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T16:38:00.506+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:41:24.533+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/v1/users/login", parameters={}
+2023-12-25T16:41:24.534+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:41:24.535+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:41:24.549+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T16:41:24.551+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:41:24.554+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T16:41:24.572+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T16:41:24.573+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T16:41:24.575+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:46:06.809+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T16:46:06.810+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:46:06.814+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T16:46:06.833+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T16:46:06.834+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T16:46:06.837+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:48:15.683+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T16:48:15.684+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:48:15.686+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T16:48:15.720+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T16:48:15.722+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T16:48:15.724+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:49:10.421+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T16:49:10.422+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:49:10.424+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T16:49:10.447+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T16:49:10.448+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T16:49:10.450+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:55:10.388+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T16:55:10.388+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:55:10.389+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T16:55:10.396+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T16:55:10.396+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T16:55:10.397+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:55:19.699+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T16:55:19.699+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:55:19.701+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T16:55:19.706+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T16:55:19.706+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T16:55:19.707+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:59:21.487+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T16:59:21.488+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:59:21.488+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T16:59:21.492+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T16:59:21.493+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T16:59:21.493+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T16:59:59.344+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T16:59:59.344+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T16:59:59.344+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T16:59:59.349+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T16:59:59.349+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T16:59:59.350+05:30 DEBUG 40716 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T17:02:41.316+05:30 DEBUG 40716 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T17:02:41.316+05:30 DEBUG 40716 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T17:02:41.317+05:30 DEBUG 40716 --- [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T17:02:41.325+05:30 DEBUG 40716 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T17:02:41.325+05:30 DEBUG 40716 --- [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T17:02:41.326+05:30 DEBUG 40716 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T17:38:16.154+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/v1/users/login", parameters={}
+2023-12-25T17:38:16.154+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T17:38:16.154+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T17:38:16.157+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T17:38:16.158+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T17:38:16.158+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T17:38:16.167+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T17:38:16.167+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T17:38:16.168+05:30 DEBUG 40716 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T17:41:27.783+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T17:41:27.783+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T17:41:27.784+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T17:41:27.790+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T17:41:27.790+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T17:41:27.791+05:30 DEBUG 40716 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T17:43:23.917+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T17:43:23.917+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T17:43:23.918+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T17:43:23.926+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T17:43:23.926+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T17:43:23.927+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T17:47:19.372+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T17:47:19.373+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T17:47:19.374+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T17:47:19.381+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T17:47:19.381+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T17:47:19.382+05:30 DEBUG 40716 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T17:58:34.349+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T17:58:34.350+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T17:58:34.351+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T17:58:34.364+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T17:58:34.364+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T17:58:34.365+05:30 DEBUG 40716 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T17:59:24.075+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T17:59:24.075+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T17:59:24.076+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T17:59:24.081+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T17:59:24.082+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T17:59:24.083+05:30 DEBUG 40716 --- [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T18:04:51.373+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T18:04:51.373+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T18:04:51.374+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T18:04:51.378+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T18:04:51.379+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T18:04:51.379+05:30 DEBUG 40716 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T18:14:15.497+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : OPTIONS "/api/v1/users/login", parameters={}
+2023-12-25T18:14:15.497+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T18:14:15.498+05:30 DEBUG 40716 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2023-12-25T18:14:15.501+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/users/login", parameters={}
+2023-12-25T18:14:15.501+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.mapping.relationships.controller.UserController#userLogin(LoginRequestDto)
+2023-12-25T18:14:15.502+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequestDto(email=Gunnu@gunnu.com, password=Gunnu)]
+2023-12-25T18:14:15.507+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json, text/plain, */*] and supported [application/json, application/*+json]
+2023-12-25T18:14:15.508+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [LoginCredentialsDto(role=[DOCTOR], email=Gunnu@gunnu.com, authToken=Gunnu, message=Logged in success (truncated)...]
+2023-12-25T18:14:15.508+05:30 DEBUG 40716 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
