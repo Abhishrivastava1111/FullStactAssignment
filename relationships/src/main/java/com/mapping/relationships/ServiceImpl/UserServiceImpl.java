@@ -2,11 +2,10 @@ package com.mapping.relationships.ServiceImpl;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,7 +38,7 @@ public class UserServiceImpl implements UserService{
 
 
 
-    
+
     @Transactional
     @Override
     public User addUser(DoctorDto dtoObj, String type) {
@@ -99,6 +98,7 @@ public class UserServiceImpl implements UserService{
       userDao.deleteById(id);
     }
 
+    @Transactional
     @Override
     public LoginCredentialsDto login(String email, String passwordString) {
      List<User> u = userDao.findByEmailAndPassword(email, passwordString);
@@ -107,7 +107,7 @@ public class UserServiceImpl implements UserService{
       
       if(u.size()!=0){
       userDataToBeSent.setEmail(u.get(0).getEmail());
-
+      
       u.get(0).getRoles().forEach(role-> userDataToBeSent.getRole().add(role.getRoleName()));
       userDataToBeSent.setAuthToken(passwordString);
       }
