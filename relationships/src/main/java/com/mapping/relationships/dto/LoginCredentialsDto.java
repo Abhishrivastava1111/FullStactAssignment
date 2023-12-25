@@ -1,6 +1,7 @@
 package com.mapping.relationships.dto;
 
 
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -18,7 +19,7 @@ import lombok.ToString;
 @AllArgsConstructor
 public class LoginCredentialsDto {
 
-    private Set<String> role;
+    private Set<String> role = new HashSet<>();
 
     private String email;
     private String authToken;
