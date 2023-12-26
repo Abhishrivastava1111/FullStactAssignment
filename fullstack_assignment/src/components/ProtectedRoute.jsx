@@ -4,6 +4,8 @@ import LoginForm from "./Auth";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import { authActions } from "../store/auth-slice";
+import SignUpForm from "../SignUp";
+import Dashboard from "../Dashboard";
 const ProtectedRoute = (props) => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
@@ -23,22 +25,38 @@ const ProtectedRoute = (props) => {
   //   console.log(email);
   const routes = (
     <>
+      <Route path="/" element={<Dashboard />} />
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<Home />} />
       <Route path="/products" element={<Home />} />
       <Route path="/contact" element={<Home />} />
     </>
   );
+  const routesForUnAuthUser = (
+    <>
+      <Route path="/" element={<LoginForm />} />
+      <Route path="/signup" element={<SignUpForm />} />
+    </>
+  );
+
+  const routesForAdmin = (
+    <>
+      <Route path="/" element={<Dashboard />} />
+      <Route path="/signup" element={<SignUpForm />} />
+    </>
+  );
 
   const findRoute = () => {
-    debugger;
-    console.log(typeof roles);
+    if (!isLoggedIn) {
+      return routesForUnAuthUser;
+    }
     for (let r of roles) {
       switch (r) {
         case "DOCTOR":
-          console.log("**********");
           return routes;
 
+        case "ADMIN":
+          return routesForAdmin;
         default:
           console.log("******&&&&&&&&&&&&");
           break;
@@ -47,7 +65,13 @@ const ProtectedRoute = (props) => {
   };
 
   return (
-    <div>{isLoggedIn ? <Routes> {findRoute()} </Routes> : <LoginForm />}</div>
+    <div>
+      {isLoggedIn ? (
+        <Routes> {findRoute()} </Routes>
+      ) : (
+        <Routes>{findRoute()}</Routes>
+      )}
+    </div>
   );
 };
 export default ProtectedRoute;

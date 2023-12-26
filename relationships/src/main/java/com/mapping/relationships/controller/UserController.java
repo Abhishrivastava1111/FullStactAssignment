@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mapping.relationships.Entities.User;
+import com.mapping.relationships.dto.DoctorDto;
 import com.mapping.relationships.dto.LoginCredentialsDto;
 import com.mapping.relationships.dto.LoginRequestDto;
 import com.mapping.relationships.service.UserService;
@@ -33,5 +35,15 @@ public class UserController {
             login.setMessage("The credential are invalid");
             return ResponseEntity.ok(login);
         }
+    }
+
+
+    @PostMapping("/addUser")
+    public ResponseEntity<String> addUser(@RequestBody DoctorDto dto){
+       User u =  userService.addUser(dto, dto.getAccountType());
+        if(u==null)
+        return ResponseEntity.ok("Something went worng");
+        else
+        return ResponseEntity.ok("The user is successfully added");
     }
 }

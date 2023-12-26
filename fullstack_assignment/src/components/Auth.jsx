@@ -15,7 +15,6 @@ import { useDispatch } from "react-redux";
 import { authActions } from "../store/auth-slice";
 import axios from "axios";
 import baseUrl from "../util";
-import SignUpForm from "../SignUp";
 
 const LoginForm = () => {
   const defaultTheme = createTheme();
@@ -53,7 +52,9 @@ const LoginForm = () => {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            padding: 3,
+            boxShadow: 4,
+            marginTop: 20,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -107,7 +108,7 @@ const LoginForm = () => {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href={SignUpForm} variant="body2">
+                <Link href="/signup" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

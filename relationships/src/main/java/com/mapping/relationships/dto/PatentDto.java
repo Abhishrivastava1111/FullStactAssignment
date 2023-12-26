@@ -14,4 +14,6 @@ public class PatentDto {
     private String email;
 
     private String password;    
+
+    private String accountType;
 }

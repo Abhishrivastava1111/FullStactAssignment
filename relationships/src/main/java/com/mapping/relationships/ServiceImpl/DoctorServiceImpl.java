@@ -10,10 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import com.mapping.relationships.Entities.Doctor;
 import com.mapping.relationships.Entities.User;
-import com.mapping.relationships.Entities.UserRole;
 import com.mapping.relationships.dao.DoctorDao;
-import com.mapping.relationships.dao.RolesDao;
-import com.mapping.relationships.dao.UserRoleDao;
 import com.mapping.relationships.dto.DoctorDto;
 import com.mapping.relationships.service.DoctorService;
 import com.mapping.relationships.service.UserService;
@@ -73,11 +70,13 @@ public class DoctorServiceImpl implements DoctorService{
 
    @Override
    public ResponseEntity<String> updateDoctor(DoctorDto dto, Long id) {
-
-      Optional<User> user = userService.findByDoctorId(id);
-      Optional<Doctor> doc = doctorDao.findById(id);
       boolean flag =false;
-      if(user.isPresent()&& doc.isPresent()){
+
+      Optional<Doctor> doc = doctorDao.findById(id);
+      if(doc.isPresent()){
+      Optional<User> user = userService.findByDoctorId(doc.get().getUser().getUserId());
+      
+      if(user.isPresent()){
         
           User u =  user.get();
           Doctor d = doc.get();
@@ -88,6 +87,7 @@ public class DoctorServiceImpl implements DoctorService{
          userService.save(u);
          flag = true;
       }
+   }
       return flag?ResponseEntity.ok("The data is updated successfully"):ResponseEntity.ok("something went wrong");
 
    }
@@ -95,8 +95,12 @@ public class DoctorServiceImpl implements DoctorService{
 
    @Override
    public ResponseEntity<String> deleteDoctorsRecord(Long id) {
-      doctorDao.deleteById(id);
-      userService.deleteById(id);
+      Optional<Doctor> doctorTobeDeleted = doctorDao.findById(id);
+      if(doctorTobeDeleted.isPresent()){
+         doctorDao.deleteById(id);
+         userService.deleteById(doctorTobeDeleted.get().getUser().getUserId());
+      }
+     
       
 
       

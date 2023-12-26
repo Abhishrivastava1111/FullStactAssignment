@@ -9,6 +9,8 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { Link, Route } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { authActions } from "../store/auth-slice";
 const navigationLinks = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
@@ -17,6 +19,8 @@ const navigationLinks = [
 ];
 
 function Header() {
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
@@ -25,6 +29,10 @@ function Header() {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const logout = () => {
+    dispatch(authActions.logout());
   };
 
   return (
@@ -39,11 +47,12 @@ function Header() {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Application Name
+          Health_Studio V4
         </Typography>
 
-        <Button color="inherit">Login</Button>
-        <Button color="inherit">Sign Up</Button>
+        <Button variant="outlined" onClick={logout} color="inherit">
+          {isLoggedIn ? "Logout" : "login"}
+        </Button>
         <Menu
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}

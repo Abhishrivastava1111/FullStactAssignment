@@ -14,9 +14,10 @@ const authSlice = createSlice({
       }
     },
     logout(state) {
-      state.state.isLoggedIn = false;
+      state.isLoggedIn = false;
       state.userName = "";
       state.roles = [];
+      localStorage.clear();
     },
   },
 });

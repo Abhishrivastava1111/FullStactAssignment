@@ -5,16 +5,19 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.mapping.relationships.Entities.Compounder;
 import com.mapping.relationships.Entities.Doctor;
+import com.mapping.relationships.Entities.Patient;
 import com.mapping.relationships.Entities.Roles;
 import com.mapping.relationships.Entities.User;
 import com.mapping.relationships.Entities.UserRole;
+import com.mapping.relationships.dao.CompounderDao;
 import com.mapping.relationships.dao.DoctorDao;
+import com.mapping.relationships.dao.PatientDao;
 import com.mapping.relationships.dao.RolesDao;
 import com.mapping.relationships.dao.UserDao;
 import com.mapping.relationships.dto.DoctorDto;
@@ -33,12 +36,15 @@ public class UserServiceImpl implements UserService{
     private RolesDao rolesDao;
 
     @Autowired
+    private PatientDao patientDao;
+
+    @Autowired
+    private CompounderDao compounderDao;
+
+    @Autowired
     private DoctorDao doctorDao;
 
-
-
-
-
+// Add user function ********************************************
     @Transactional
     @Override
     public User addUser(DoctorDto dtoObj, String type) {
@@ -59,16 +65,39 @@ public class UserServiceImpl implements UserService{
       //saving the user with the given credential
       User savedUser =  userDao.save(newUser);
 
-        // Creating the doc obj to persist in the database as the user
-         Doctor doc = new Doctor();
-         
-         doc.setSpecialization(dtoObj.getSpecialization());
+        // Creating and persisting the approprite  obj to persist in the database as the user
+         switch (type) {
 
-         //setting up the field of doctor as user
-         doc.setUser(savedUser);
 
-   //actually persisting the data in the doctor's table
-      doctorDao.save(doc);
+          case "PATIENT":
+             Patient pat = new Patient();
+             pat.setUser(savedUser);
+             patientDao.save(pat);
+            break;
+
+          case "DOCTOR":
+                 Doctor doc = new Doctor();
+                 doc.setSpecialization(dtoObj.getSpecialization());
+                 doc.setUser(savedUser);
+                 doctorDao.save(doc);
+
+            
+            break;
+
+          case "COMPOUNDER":
+                Compounder compounder = new Compounder();
+                compounder.setUser(savedUser);
+                compounderDao.save(compounder);
+            break;
+      
+          default:
+          return null;
+            
+      
+         }
+     
+
+   
 
       //persisting the userRole for the perticular type of user
       UserRole userRole = new UserRole();
@@ -101,8 +130,8 @@ public class UserServiceImpl implements UserService{
     @Transactional
     @Override
     public LoginCredentialsDto login(String email, String passwordString) {
-     List<User> u = userDao.findByEmailAndPassword(email, passwordString);
-      LoginCredentialsDto userDataToBeSent = new LoginCredentialsDto();
+    List<User> u = userDao.findByEmailAndPassword(email, passwordString);
+    LoginCredentialsDto userDataToBeSent = new LoginCredentialsDto();
       
       
       if(u.size()!=0){
