@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import CancelIcon from "@mui/icons-material/Cancel";
+
 import {
   Button,
   TextField,
@@ -11,11 +13,16 @@ import {
   MenuItem,
   Select,
   InputLabel,
+  OutlinedInput,
+  Stack,
+  Chip,
 } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom"; // Import for login link
 import baseUrl from "./util";
 
 const SignUpForm = () => {
+  const names = ["DOCTOR", "PATIENT", "COMPOUNDER"];
+  const [selectedNames, setSelectedNames] = useState([]);
   const navigate = useNavigate();
   const {
     register,
@@ -33,7 +40,7 @@ const SignUpForm = () => {
         name: name,
         email: data.email,
         password: data.password,
-        accountType: data.accountType,
+        accountType: selectedNames,
       },
     }).then(() => navigate("/"));
     console.log(data);
@@ -94,19 +101,42 @@ const SignUpForm = () => {
           />
 
           <Grid item xs={10} sm={12} sx={{ padding: 1 }}>
-            <InputLabel id="select">Account Type</InputLabel>
+            {/* {/////////////////////////////////////////////////} */}
+            <InputLabel> Select one or many roles</InputLabel>
             <Select
-              sx={{ height: 1 }}
-              id="select"
-              fullWidth
-              margin="normal"
-              {...register("accountType", {
-                required: "Account type is required",
-              })}
+              {...register("roles", { required: "roles are needed" })}
+              multiple
+              value={selectedNames}
+              onChange={(e) => setSelectedNames(e.target.value)}
+              input={<OutlinedInput />}
+              error={!!errors.roles}
+              helperText={errors.roles?.message}
+              renderValue={(selected) => (
+                <Stack gap={1} direction="row" flexWrap="wrap">
+                  {selected.map((value) => (
+                    <Chip
+                      key={value}
+                      label={value}
+                      onDelete={() =>
+                        setSelectedNames(
+                          selectedNames.filter((item) => item !== value)
+                        )
+                      }
+                      deleteIcon={
+                        <CancelIcon
+                          onMouseDown={(event) => event.stopPropagation()}
+                        />
+                      }
+                    />
+                  ))}
+                </Stack>
+              )}
             >
-              <MenuItem value="DOCTOR">Doctor</MenuItem>
-              <MenuItem value="COMPOUNDER">Compounder</MenuItem>
-              <MenuItem value="PATIENT">Patient</MenuItem>
+              {names.map((name) => (
+                <MenuItem key={name} value={name}>
+                  {name}
+                </MenuItem>
+              ))}
             </Select>
           </Grid>
 

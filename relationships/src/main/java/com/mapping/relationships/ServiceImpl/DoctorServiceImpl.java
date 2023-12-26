@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import com.mapping.relationships.Entities.Doctor;
 import com.mapping.relationships.Entities.User;
 import com.mapping.relationships.dao.DoctorDao;
-import com.mapping.relationships.dto.DoctorDto;
+import com.mapping.relationships.dto.PatentDto;
 import com.mapping.relationships.service.DoctorService;
 import com.mapping.relationships.service.UserService;
 
@@ -28,10 +28,10 @@ public class DoctorServiceImpl implements DoctorService{
     private ModelMapper  modelMapper;
 
     @Override
-    public ResponseEntity<String> addDoctor(DoctorDto dto) {
-
+    public ResponseEntity<String> addDoctor(PatentDto dto) {
+      String[] arrOfRoles = new String[]{"DOCTOR"};
       // getting the persised user object
-      User savedUser = userService.addUser(dto, "DOCTOR");
+      User savedUser = userService.addUser(dto, arrOfRoles, 0L);
 
       if(savedUser!= null){
       return ResponseEntity.ok("Success");
@@ -41,10 +41,10 @@ public class DoctorServiceImpl implements DoctorService{
 
 
    @Override
-   public ResponseEntity<List<DoctorDto>> getDoctors() {
+   public ResponseEntity<List<PatentDto>> getDoctors() {
 
       //created a list to return in response
-      List<DoctorDto> list  = new ArrayList<>();
+      List<PatentDto> list  = new ArrayList<>();
 
 
       //Fetched all the users who have doctor as their type
@@ -53,9 +53,8 @@ public class DoctorServiceImpl implements DoctorService{
 
          List<Doctor> d = doctorDao.findByDoctorId(u.getUserId());
          if(!d.isEmpty()){
-         DoctorDto dto = new DoctorDto();
-         dto = modelMapper.map(u, DoctorDto.class);
-         dto.setSpecialization(d.get(0).getSpecialization());
+         PatentDto dto = new PatentDto();
+         dto = modelMapper.map(u, PatentDto.class);
          list.add(dto);
          }
          
@@ -69,12 +68,12 @@ public class DoctorServiceImpl implements DoctorService{
 
 
    @Override
-   public ResponseEntity<String> updateDoctor(DoctorDto dto, Long id) {
+   public ResponseEntity<String> updateDoctor(PatentDto dto, Long id) {
       boolean flag =false;
 
       Optional<Doctor> doc = doctorDao.findById(id);
       if(doc.isPresent()){
-      Optional<User> user = userService.findByDoctorId(doc.get().getUser().getUserId());
+      Optional<User> user = userService.findById(doc.get().getUser().getUserId());
       
       if(user.isPresent()){
         
@@ -82,7 +81,6 @@ public class DoctorServiceImpl implements DoctorService{
           Doctor d = doc.get();
          u.setName(dto.getName());
          u.setEmail(dto.getEmail());
-         d.setSpecialization(dto.getSpecialization());
          doctorDao.save(d);
          userService.save(u);
          flag = true;

@@ -2,6 +2,8 @@ package com.mapping.relationships.Entities;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,7 +25,10 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
-    @ManyToMany(cascade = CascadeType.MERGE , fetch = FetchType.EAGER)
+    // Big Changed happened if program shatters then try making the cashcade type as Merge
+    @ManyToMany(cascade = CascadeType.ALL , fetch = FetchType.EAGER)
+
+    
     @JoinTable(name = "user_role", 
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))

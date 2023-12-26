@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mapping.relationships.dto.DoctorDto;
+import com.mapping.relationships.dto.PatentDto;
 import com.mapping.relationships.service.DoctorService;
 @CrossOrigin(origins =  "*")
 @RestController
@@ -25,20 +25,20 @@ public class DoctorController {
     private DoctorService doctorService;
 
     @PostMapping("/addDoctor")
-    public ResponseEntity<String> addDoctor(@RequestBody DoctorDto dto){
+    public ResponseEntity<String> addDoctor(@RequestBody PatentDto dto){
     
 
         return doctorService.addDoctor(dto);
     }
 
     @GetMapping("/allDoctors")
-    public ResponseEntity<List<DoctorDto>> getDoctors(){
+    public ResponseEntity<List<PatentDto>> getDoctors(){
 
         return doctorService.getDoctors();
     }
 
     @PutMapping("/editDoctor/{id}")
-    public ResponseEntity<String> updateDoctor(@RequestBody DoctorDto updatedDto, @PathVariable Long id){
+    public ResponseEntity<String> updateDoctor(@RequestBody PatentDto updatedDto, @PathVariable Long id){
 
         return doctorService.updateDoctor(updatedDto, id);
     }
