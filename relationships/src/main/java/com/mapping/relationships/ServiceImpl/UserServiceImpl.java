@@ -95,14 +95,16 @@ public class UserServiceImpl implements UserService{
 
           case "PATIENT":
           Patient p = patientDao.findByUser(savedUser).orElse(null);
+             if(p==null){
              Patient pat = new Patient();
              pat.setUser(savedUser);
-             patientDao.save(pat);
+             patientDao.save(pat);}
             break;
 
           case "DOCTOR":
           Doctor d = doctorDao.findByUser(savedUser).orElse(null);
-                 if(d==null){Doctor doc = new Doctor();
+                 if(d==null)
+                 {Doctor doc = new Doctor();
                  doc.setUser(savedUser);
                  doctorDao.save(doc);}
 

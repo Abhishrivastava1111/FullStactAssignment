@@ -1,19 +1,40 @@
-import React from "react";
-import { Box, Container, Grid, Typography } from "@mui/material";
-import { useSelector } from "react-redux";
+import React, { useState } from "react";
+import { Box, Container, Typography, Select, MenuItem } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { authActions } from "./store/auth-slice";
 
-const Dashboard = () => {
+const Dashboard = ({ element }) => {
   const role = useSelector((state) => state.auth.roles);
+  const currentRole = useSelector((store) => store.auth.currentRole);
+  const [selectedRole, setSelectedRole] = useState(currentRole);
+  const dispatch = useDispatch();
+
+  const handleRoleChange = (event) => {
+    const selectedValue = event.target.value;
+    setSelectedRole(selectedValue);
+    dispatch(authActions.setCurrentRole({ role: selectedValue }));
+  };
 
   return (
     <Container component="main" maxWidth={false}>
       <Box sx={{ padding: 2, marginTop: 0 }}>
         <Typography variant="h2" align="center">
-          {role[0]} DASHBOARD
+          {currentRole} DASHBOARD
         </Typography>
-        <Grid container spacing={5}></Grid>
+
+        <Select value={selectedRole} onChange={handleRoleChange}>
+          {role.map((r, index) => (
+            <MenuItem key={index} value={r}>
+              {r}
+            </MenuItem>
+          ))}
+        </Select>
+
+        {element}
       </Box>
     </Container>
   );
 };
+
 export default Dashboard;

@@ -43,7 +43,9 @@ const LoginForm = () => {
           dispatch(authActions.login({ email: respData.email, role: roles }));
         }
       })
-      .catch((error) => {});
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (

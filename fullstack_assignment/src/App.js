@@ -7,8 +7,7 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
-      <Landing></Landing>
-      {/* <ProtectedRoute /> */}
+      <ProtectedRoute />
     </div>
   );
 }

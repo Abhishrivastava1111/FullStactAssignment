@@ -2,16 +2,19 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const authSlice = createSlice({
   name: "auth",
-  initialState: { isLoggedIn: false, userName: "", roles: [] },
+  initialState: { isLoggedIn: false, userName: "", roles: [], currentRole: "" },
   reducers: {
     login(state, action) {
-      debugger;
       state.isLoggedIn = true;
       state.userName = action.payload.email;
       state.roles = [...action.payload.role];
       if (localStorage.getItem("logicCredentials") === null) {
         persistLoginData(state.isLoggedIn, state.userName, state.roles);
       }
+    },
+    setCurrentRole(state, action) {
+      state.currentRole = action.payload.role;
+      console.log(state.currentRole);
     },
     logout(state) {
       state.isLoggedIn = false;

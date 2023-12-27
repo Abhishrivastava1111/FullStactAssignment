@@ -8,7 +8,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { Link, Route } from "react-router-dom";
+import { Link, Route, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "../store/auth-slice";
 const navigationLinks = [
@@ -20,6 +20,7 @@ const navigationLinks = [
 
 function Header() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -33,6 +34,9 @@ function Header() {
 
   const logout = () => {
     dispatch(authActions.logout());
+  };
+  const login = () => {
+    navigate("/");
   };
 
   return (
@@ -50,9 +54,16 @@ function Header() {
           Health_Studio V4
         </Typography>
 
-        <Button variant="outlined" onClick={logout} color="inherit">
-          {isLoggedIn ? "Logout" : "login"}
-        </Button>
+        {isLoggedIn ? (
+          <Button variant="outlined" onClick={logout} color="inherit">
+            Logout
+          </Button>
+        ) : (
+          <Button variant="outlined" onClick={login} color="inherit">
+            Login
+          </Button>
+        )}
+
         <Menu
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}
